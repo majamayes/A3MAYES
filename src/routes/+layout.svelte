@@ -1,7 +1,6 @@
 <script>
 	import favicon from '$lib/assets/favicon.svg';
-	import Good from '$lib/assets/Good.png'
-    
+    import lights from '$lib/images/christmas lights.png';
 	let { children } = $props();
 </script>
 
@@ -10,3 +9,5 @@
 </svelte:head>
 
 {@render children()}
+
+<img src="{lights}" alt="Christmas lights" />
