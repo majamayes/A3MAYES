@@ -23,7 +23,9 @@ form {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-bottom: 25px;
+    margin: 25px auto 25px;
+    position: relative;
+    max-width: 600px;
 }
 input[type="text"] {
     padding: 10px;
@@ -107,6 +109,28 @@ button:hover {
     background: #c0392b;
 }
 
+.lights {
+    position: absolute;
+    top: -5rem;
+    left: 50%;
+    transform: translateX(-50%) rotate(2.5deg);
+}
+.giftBox {
+    width: 60px;
+    position: absolute;
+    top: -10px;
+    right: -50px;
+}
+.bauble {
+    width: 60px;
+    position: absolute;
+    top: -16px;
+    left: -50px;
+}
+
+
+
+
 @media screen and (max-width: 1024px) {
     .todo-lists {
         width: 94%;
@@ -117,10 +141,28 @@ button:hover {
     .todo-lists {
         display: block;
     }
+    form {
+        display: block;
+        width: 75%;
+
+    }
+    form input[type="text"] {
+        width: 100%;
+        margin-bottom: 0.75em;
+    }
+    form > div {
+        display: inline-block;
+        margin-right: 1em;
+        margin-bottom: 0.5em;
+    }
+    form button {
+        display: block;
+    }
+    .giftBox {
+        right: -75px;
+    }
+    .bauble {
+        left: -75px;
+    }
 }
-img {
-  position: absolute;
-  top: 10;
-  float: right;
-  margin-left: 20px;
-}
+

@@ -1,6 +1,7 @@
 <script>
     import {onMount} from 'svelte';
-
+    import giftBox from '$lib/images/gift-box.png';
+	import bauble from '$lib/images/bauble.png';
     let todoItem =$state('');
     let todoCategory = $state('');
     let todoList =$state([]);
@@ -50,6 +51,8 @@
 </script>
 
     <form onsubmit={addItem}>
+        
+        <img class="bauble" src="{bauble}" alt="Christmas bauble" />
         <input type="text" bind:value={todoItem}>
         <div>
             <input type="radio" id="gifts"
@@ -67,6 +70,7 @@
             <label for="food">Food</label>
         </div>
         <button type="submit">Add</button>
+        <img class="giftBox" src="{giftBox}" alt="Christmas gift box" />
     </form>
 
     <div class="todo-lists">
