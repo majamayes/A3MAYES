@@ -1,6 +1,6 @@
 <script>
 	import favicon from '$lib/assets/favicon.svg';
-    import lights from '$lib/images/christmas lights.png';
+    import lights from '$lib/images/christmas-lights.png';
 	let { children } = $props();
 </script>
 
