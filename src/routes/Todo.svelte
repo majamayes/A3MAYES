@@ -33,6 +33,7 @@
             return;
         }
         todoList =[...todoList, {
+            id: Date.now(),
             text: todoItem,
             done: false,
             category: todoCategory
@@ -42,8 +43,8 @@
         todoItem ='';
     }
     //remove todoItem from todoList
-    function removeItem(index) {
-          todoList.splice(index,1);
+    function removeItem(id) {
+          todoList = todoList.filter(item => item.id !== id);
           updateList();
           sortLists();
     }
@@ -77,11 +78,11 @@
     <div class="todo-list">
         <h2>Gifts</h2>
         <ul>
-           {#each giftList as item, index}
+           {#each giftList as item}
                  <li>
                     <input type="checkbox" bind:checked={item.done} onchange={updateList}>
                     <span class:done={item.done}>{item.text}</span>
-                    <button type="button" onclick={() => removeItem(index)}>x</button>
+                    <button type="button" onclick={() => removeItem(item.id)}>x</button>
                 </li>
            {/each}
         </ul>
@@ -89,11 +90,11 @@
         <div class="todo-list">
             <h2>Decor</h2>
         <ul>
-           {#each decorList as item, index}
+           {#each decorList as item}
                  <li>
                     <input type="checkbox" bind:checked={item.done} onchange={updateList}>
                     <span class:done={item.done}>{item.text}</span>
-                    <button type="button" onclick={() => removeItem(index)}>x</button>
+                    <button type="button" onclick={() => removeItem(item.id)}>x</button>
                 </li>
            {/each}
         </ul>
@@ -101,11 +102,11 @@
         <div class="todo-list">
             <h2>Food</h2>
         <ul>
-           {#each foodList as item, index}
+           {#each foodList as item}
                  <li>
                     <input type="checkbox" bind:checked={item.done} onchange={updateList}>
                     <span class:done={item.done}>{item.text}</span>
-                    <button type="button" onclick={() => removeItem(index)}>x</button>
+                    <button type="button" onclick={() => removeItem(item.id)}>x</button>
                 </li>
            {/each}
         </ul>
